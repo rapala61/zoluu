@@ -1,22 +1,14 @@
 // Import styles
+import { setClassForElement } from './helpers';
+
 require('../css/fonts.scss');
 require('../css/styles.scss');
 
-function makeHeaderVisible(make) {
-  if (make) {
-    if (!document.querySelector('header').classList.contains('visible')) {
-      document.querySelector('header').className += 'visible';
-    }
-  } else {
-    document.querySelector('header').classList.remove('visible');
-  }
-}
-
-// scroll
+// make header visible when scrolling past 5px
 window.addEventListener('scroll', (e) => {
   if (document.body.scrollTop > 5) {
-    makeHeaderVisible(true);
+    setClassForElement('header', 'visible');
   } else {
-    makeHeaderVisible(false);
+    setClassForElement('header', 'visible', false);
   }
 });

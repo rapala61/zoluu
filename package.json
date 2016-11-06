@@ -4,8 +4,8 @@
   "description": "zoluu",
   "main": "index.js",
   "scripts": {
-    "build-dev": "./node_modules/webpack/bin/webpack.js",
-    "build-prod": "./node_modules/webpack/bin/webpack.js -p",
+    "build-dev": "./node_modules/webpack/bin/webpack.js --config webpack.config.dev.js",
+    "build-prod": "./node_modules/webpack/bin/webpack.js -p --config webpack.config.prod.js",
     "start": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js --progress --colors --inline --hot "
   },
   "author": "Rafael Pacas",

@@ -71,8 +71,11 @@ header {
 
 .hero {
   height: 702px;
-  background-image: url('img/city-main-hero.png');
   text-align: center;
+  background-image: url('img/city-main-hero.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 
   h1 {
     position: absolute;
@@ -107,8 +110,8 @@ footer {
 
   .copyright {
     text-align: center;
-    font-family: $roboto;
-    font-weight: 100;
-    color: $grey-letters;
+    font-family: $roboto-condensed;
+    font-weight: 300;
+    color: rgba( $grey-letters, .5 );
   }
 }
