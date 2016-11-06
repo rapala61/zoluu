@@ -1,0 +1,27 @@
+// .helper {
+//   height: 100%;
+//   display: inline-block;
+//   vertical-align: middle;
+// }
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  &:link {
+    color:inherit;
+  }
+}
+
+.visible {
+  background-color: white;
+  box-shadow: 0 2px 1px 0px $hero-text-shadow;
+}
+
+.flex-size-2 {
+  flex-grow: 2;
+}
