@@ -3,7 +3,7 @@ function setClassForElement(selector, className, set = true) {
 
   if (set) {
     if (!el.classList.contains(className)) {
-      el.className += className;
+      el.classList.add(className);
     }
   } else {
     el.classList.remove(className);

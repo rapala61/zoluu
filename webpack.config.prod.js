@@ -8,7 +8,7 @@ module.exports = {
   debug: true,
   entry: {
     bundle: [
-      './public/src/js/scripts.js',
+      './public/src/js/global.js',
       './public/src/html/templates/footer/footer.js',
       './public/src/html/templates/header/header.js'],
     home: [
