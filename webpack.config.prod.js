@@ -5,7 +5,7 @@ const path = require('path');
 const styles = 'css?sourceMap!autoprefixer!sass?sourceMap';
 
 module.exports = {
-  debug: true,
+  // debug: true,
   entry: {
     bundle: [
       './public/src/js/global.js',
@@ -45,8 +45,10 @@ module.exports = {
       {
         test: /\.(png|jpg|jpeg|gif)$/,
         exclude: /(node_modules|bower_components)/,
-        // loader: 'url'
-        loader: 'file?name=imgs/[hash].[ext]'
+        loaders: [
+          'url',
+          'image-webpack?{optimizationLevel: 7, interlaced: false, pngquant:{quality: "65-90", speed: 4}, mozjpeg: {quality: 65}}'
+        ]
       },
       {
         test: /\.woff$/,

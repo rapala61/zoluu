@@ -50,7 +50,10 @@ module.exports = {
       {
         test: /\.(png|jpg|jpeg|gif)$/,
         exclude: /(node_modules|bower_components)/,
-        loader: 'url'
+        loaders: [
+          'url',
+          'image-webpack?{optimizationLevel: 7, interlaced: false, pngquant:{quality: "65-90", speed: 4}, mozjpeg: {quality: 65}}'
+        ]
       },
       {
         test: /\.woff$/,
