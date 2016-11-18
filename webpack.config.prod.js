@@ -45,7 +45,8 @@ module.exports = {
       {
         test: /\.(png|jpg|jpeg|gif)$/,
         exclude: /(node_modules|bower_components)/,
-        loader: 'url'
+        // loader: 'url'
+        loader: 'file?name=imgs/[hash].[ext]'
       },
       {
         test: /\.woff$/,
