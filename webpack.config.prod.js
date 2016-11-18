@@ -5,12 +5,14 @@ const path = require('path');
 const styles = 'css?sourceMap!autoprefixer!sass?sourceMap';
 
 module.exports = {
-  // debug: true,
   entry: {
     bundle: [
       './public/src/js/global.js',
       './public/src/html/templates/footer/footer.js',
       './public/src/html/templates/header/header.js'],
+    about: [
+      './public/src/html/templates/main/about/about.js'
+    ],
     home: [
       './public/src/html/templates/main/home/home.js'],
     energyAudit: [
@@ -47,7 +49,7 @@ module.exports = {
         exclude: /(node_modules|bower_components)/,
         loaders: [
           'url',
-          'image-webpack?{optimizationLevel: 7, interlaced: false, pngquant:{quality: "65-90", speed: 4}, mozjpeg: {quality: 65}}'
+          'image-webpack?{optimizationLevel: 6, interlaced: false, pngquant:{quality: "65-90", speed: 4}, mozjpeg: {quality: 65}}'
         ]
       },
       {
@@ -76,6 +78,12 @@ module.exports = {
       filename: 'energy_audit.html',
       template: './public/src/html/energy_audit.html',
       chunks: ['energyAudit', 'bundle']
+    }),
+    new HtmlWebpackPlugin({
+      title: 'About',
+      filename: 'about.html',
+      template: './public/src/html/about.html',
+      chunks: ['about', 'bundle']
     })
   ]
 };

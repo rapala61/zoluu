@@ -12,6 +12,11 @@ module.exports = {
       './public/src/html/templates/header/header.js',
       'webpack/hot/dev-server',
       'webpack-dev-server/client?http://localhost:8080'],
+    about: [
+      './public/src/html/templates/main/about/about.js',
+      'webpack/hot/dev-server',
+      'webpack-dev-server/client?http://localhost:8080'
+    ],
     home: [
       './public/src/html/templates/main/home/home.js',
       'webpack/hot/dev-server',
@@ -52,7 +57,7 @@ module.exports = {
         exclude: /(node_modules|bower_components)/,
         loaders: [
           'url',
-          'image-webpack?{optimizationLevel: 7, interlaced: false, pngquant:{quality: "65-90", speed: 4}, mozjpeg: {quality: 65}}'
+          'image-webpack?{optimizationLevel: 6, interlaced: false, pngquant:{quality: "65-90", speed: 4}, mozjpeg: {quality: 65}}'
         ]
       },
       {
@@ -69,7 +74,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Zoluu',
+      title: 'Zoluu Home',
       template: 'public/src/html/main.html',
       chunks: ['home', 'bundle']
     }),
@@ -78,6 +83,12 @@ module.exports = {
       filename: 'energy_audit.html',
       template: './public/src/html/energy_audit.html',
       chunks: ['energyAudit', 'bundle']
+    }),
+    new HtmlWebpackPlugin({
+      title: 'About',
+      filename: 'about.html',
+      template: './public/src/html/about.html',
+      chunks: ['about', 'bundle']
     })
   ]
 };
