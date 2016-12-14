@@ -50,7 +50,8 @@ module.exports = {
       {
         test: /\.scss$/,
         exclude: /(node_modules|bower_components)/,
-        loader: 'style!css?sourceMap!autoprefixer!sass?sourceMap&sourceComments'
+        loader: 'style-loader!css-loader?sourceMap&modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!autoprefixer-loader!resolve-url-loader!sass-loader?sourceMap&sourceComments'
+        // loader: 'style!css?sourceMap!autoprefixer!sass?sourceMap&sourceComments'
       },
       {
         test: /\.(png|jpg|jpeg|gif)$/,

@@ -1,0 +1,22 @@
+@import '../../../../css/_main';
+
+.hero {
+  height: 702px;
+  text-align: center;
+  background-image: url('img/city-main-hero.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  h1 {
+    position: absolute;
+    left: 50%;
+    top: 38.5%;
+    transform: translate(-50%, -50%);
+    font-weight: 600;
+    font-size: 60px;
+    color: white;
+    text-transform: uppercase;
+    text-shadow: 0 1px $hero-text-shadow;
+  }
+}

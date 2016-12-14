@@ -1,0 +1,11 @@
+@import 'main';
+@import 'helpers';
+
+body {
+  font-family: $font-family;
+  font-weight: 400;
+}
+
+* {
+  box-sizing: border-box;
+}

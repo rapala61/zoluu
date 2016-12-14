@@ -2,7 +2,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const path = require('path');
 
-const styles = 'css?sourceMap!autoprefixer!sass?sourceMap';
+// const styles = 'css?sourceMap!autoprefixer!sass?sourceMap';
+const styles = 'css-loader?sourceMap&modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!autoprefixer-loader!resolve-url-loader!sass-loader?sourceMap&sourceComments';
 
 module.exports = {
   entry: {
@@ -14,9 +15,11 @@ module.exports = {
       './public/src/html/templates/main/about/about.js'
     ],
     home: [
-      './public/src/html/templates/main/home/home.js'],
+      './public/src/html/templates/main/home/home.js'
+    ],
     energyAudit: [
-      './public/src/html/templates/main/energy_audit/energy_audit.js']
+      './public/src/html/templates/main/energy_audit/energy_audit.js'
+    ]
   },
   output: {
     path: path.join(__dirname, 'public/dist/'),
@@ -65,7 +68,7 @@ module.exports = {
     ]
   },
   plugins: [
-    new ExtractTextPlugin('main.css', {
+    new ExtractTextPlugin('[name]_[id]_[contenthash].css', {
       allChunks: true
     }),
     new HtmlWebpackPlugin({

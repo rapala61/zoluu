@@ -1,3 +1,3 @@
-// Import styles
+// Import global styles
 require('../css/fonts.scss');
-require('../css/styles.scss');
+require('../css/global.scss');
