@@ -18,14 +18,31 @@ const data = {
 header.innerHTML = Mustache.render(template, data);
 
 const className = header.querySelector('header').getAttribute('data-visible-class');
-// Only if the header has class of fixed
-// if (header.classList.contains(fixedClassName)) {
-  // make header visible when scrolling past 5px
-  window.addEventListener('scroll', (e) => {
-    if (document.body.scrollTop > 5) {
-      setClassForElement('header', className);
-    } else {
-      setClassForElement('header', className, false);
-    }
-  });
-// }
+const menuBtn = header.querySelector('.hamburger');
+const RespNavLinks = header.querySelector('.responsive-nav-links');
+const RespNavLinksVisibleClass = RespNavLinks.getAttribute('data-visible-class');
+
+function handleResponsiveMenu() {
+  if (RespNavLinks.classList.contains(RespNavLinksVisibleClass)) {
+    setClassForElement('.responsive-nav-links', RespNavLinksVisibleClass, false);
+  } else {
+    setClassForElement('.responsive-nav-links', RespNavLinksVisibleClass);
+  }
+}
+
+// make header visible when scrolling past 5px
+window.addEventListener('scroll', (e) => {
+  if (document.body.scrollTop > 5) {
+    setClassForElement('header', className);
+  } else {
+    setClassForElement('header', className, false);
+  }
+});
+
+menuBtn.addEventListener('click', (e) => {
+  handleResponsiveMenu();
+});
+
+RespNavLinks.addEventListener('mouseleave', (e) => {
+  handleResponsiveMenu();
+});

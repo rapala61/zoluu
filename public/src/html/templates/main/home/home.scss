@@ -20,3 +20,19 @@
     text-shadow: 0 1px $hero-text-shadow;
   }
 }
+
+@media screen and (max-width: 900px) {
+  .hero {
+    h1 {
+      font-size: 2em;
+    }
+  }
+}
+
+@media screen and (min-width: 900px) and (max-width: 1181px) {
+  .hero {
+    h1 {
+      font-size: 2.5em;
+    }
+  }
+}

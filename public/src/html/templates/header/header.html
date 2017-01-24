@@ -1,11 +1,19 @@
-<header class="{{styles.header}} {{styles.fixed}}" data-visible-class="{{styles.visible}}">
+<header class="{{styles.header}} {{styles.fixed}}" data-visible-class="{{styles.visible-header-bg}}">
   <div class="{{styles.logo}}">
     <a href="/"><img src="../../../css/img/zoluu_logo_verde_2.png" alt="" /></a>
   </div>
-  <ul class="{{styles.nav-links}}">
+  <ul class="{{styles.nav-links}} nav-links">
     <a href="/about.html"><li>About</li></a>
     <a href="#"><li>Services</li></a>
     <a href="#"><li>Projects</li></a>
     <a href="/energy_audit.html"><li>Request Energy Audit</li></a>
   </ul>
+  <button class="{{styles.hamburger}} hamburger">&#9776;</button>
 </header>
+
+<ul class="{{styles.responsive-nav-links}} responsive-nav-links" data-visible-class="{{styles.responsive-nav-links-visible}}" data-responsive-class="{{styles.responsive-nav-links}}">
+  <a href="/about.html"><li>About</li></a>
+  <a href="#"><li>Services</li></a>
+  <a href="#"><li>Projects</li></a>
+  <a href="/energy_audit.html"><li>Request Energy Audit</li></a>
+</ul>
