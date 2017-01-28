@@ -2,18 +2,16 @@
 
 .about {
   padding: 80px 50px;
-  height: 750px;
+  height: 100%;
   display: flex;
   flex-direction: row;
 
   .left {
-    // background-color: red;
     width: 61.8%;
     padding: 0 10px;
   }
 
   .right {
-    // background-color: blue;
     width: 38.2%;
     padding: 0 10px;
   }
@@ -23,12 +21,12 @@
   font-family: $didact;
 
   header {
-    font-size: 26px;
+    font-size: 24px;
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    height: 58px;
+    height: 54px;
     color: $dark-letter-color;
     text-transform: uppercase;
     border-top: 2px solid $grey-borders;
@@ -36,12 +34,12 @@
   }
 
   p {
-    font-size: 20px;
+    font-size: 18px;
     color: $dark-letter-color;
   }
 
   .cta-audit {
-    margin-top: 24px;
+    margin: 24px;
     text-align: center;
 
     input {
@@ -57,4 +55,57 @@
     }
   }
 
+  .logos-container {
+    text-align: center;
+    padding-top: 20px;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+}
+
+@media screen and (max-width: 768px) {
+  .about {
+    flex-direction: column;
+
+    .left, .right {
+      width: 100%;
+    }
+  }
+
+  .statement {
+    .cta-audit {
+      input {
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 455px) {
+
+  .about {
+    padding: 80px 0;
+  }
+  
+  .statement {
+    .cta-audit {
+      input {
+        word-wrap: break-word;
+        font-size: 1em;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 940px) {
+  .statement {
+    .cta-audit {
+      input {
+        font-size: 28px;
+      }
+    }
+  }
 }
