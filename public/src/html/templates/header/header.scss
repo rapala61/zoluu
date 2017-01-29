@@ -14,11 +14,9 @@
   }
 
   .logo {
-    height: 60px;
-    width: 107px;
-    // background-image: url('img/zoluu_logo_verde_2.png');
-    // background-position: center;
-    // background-repeat: no-repeat;
+    img {
+      width: 120px;
+    }
   }
 }
 
@@ -34,8 +32,7 @@
     height: 30px;
     text-transform: uppercase;
     font-weight: 700;
-    text-shadow: 0 1px $text-shadow;
-    color: $green-letters;
+    color: $footer-background;
   }
 }
 
@@ -74,8 +71,7 @@
     height: 30px;
     text-transform: uppercase;
     font-weight: 700;
-    text-shadow: 0 1px $text-shadow;
-    color: $green-letters;
+    color: $footer-background;
   }
 }
 
