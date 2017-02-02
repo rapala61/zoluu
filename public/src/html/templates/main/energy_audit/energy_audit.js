@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import Mustache from 'mustache';
 import template from './energy_audit.html';
 
@@ -9,6 +11,13 @@ const data = {
 
 document.querySelector('#main-section')
   .innerHTML = Mustache.render(template, data);
+
+
+
+document.querySelector('#crm-form').addEventListener('submit', (e) => {
+  e.preventDefault();
+  return checkMandatory();
+})
 
 
 // ZOHO FORM JS
@@ -23,8 +32,8 @@ let email = '';
 
 function checkMandatory() {
 
-  for(i=0;i<mndFileds.length;i++) {
-
+  for(let i=0;i<mndFileds.length;i++) {
+    debugger
     const fieldObj=document.forms['WebToLeads1862269000000289001'][mndFileds[i]];
 
     if(fieldObj) {
@@ -49,21 +58,22 @@ function checkMandatory() {
           return false;
         }
 
-    } else if(fieldObj.type =='checkbox'){
+      } else if(fieldObj.type =='checkbox'){
 
-      if(fieldObj.checked == false){
+        if(fieldObj.checked == false){
 
-        alert('Please accept  '+fldLangVal[i]);
-        fieldObj.focus();
-        return false;
+          alert('Please accept  '+fldLangVal[i]);
+          fieldObj.focus();
+          return false;
+        }
       }
-    }
 
-    try {
-      if(fieldObj.name == 'Last Name') {
-        name = fieldObj.value;
-       }
-    } catch (e) {}
+      try {
+        if(fieldObj.name == 'Last Name') {
+          name = fieldObj.value;
+         }
+      } catch (e) {}
+    }
   }
-}
+  document.querySelector('#crm-form').submit();
 }
