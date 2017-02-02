@@ -33,7 +33,6 @@ let email = '';
 function checkMandatory() {
 
   for(let i=0;i<mndFileds.length;i++) {
-    debugger
     const fieldObj=document.forms['WebToLeads1862269000000289001'][mndFileds[i]];
 
     if(fieldObj) {
