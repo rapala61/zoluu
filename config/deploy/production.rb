@@ -1,4 +1,4 @@
-set :stage, :staging
+set :production
 role :app, %w{zoluu02@107.180.56.176}
 role :web, %w{zoluu02@107.180.56.176}
 role :db, %w{zoluu02@107.180.56.176}

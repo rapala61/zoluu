@@ -1,4 +1,5 @@
 set :stage, :staging
+set :branch, 'stage'
 role :app, %w{rafaelp2@50.87.248.124}
 role :web, %w{rafaelp2@50.87.248.124}
 role :db, %w{rafaelp2@50.87.248.124}
